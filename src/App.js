@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+//import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
 
 function App() {
+
+  const [contador, setContador] = useState(0);
+
+  function handButtonClick() {
+	setContador(contador + 1);
+}
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+		<Header title={contador}/>
+		<input type='button' value="Click me" onClick={handButtonClick} />
       </header>
     </div>
   );
